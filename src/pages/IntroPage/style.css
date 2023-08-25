@@ -18,6 +18,14 @@
   animation: 4.5s ease-out 1s forwards fadeIn
 }
 
+.top-frame {
+  width: 100vw;
+  position: absolute;
+  top: 10;
+  opacity: 0;
+  animation: 4.5s ease-out 1s forwards fadeIn
+}
+
 .big-logo {
   background: url('../../assets/bigLogo.png') 50% 10% no-repeat;
   background-size: contain;
@@ -30,6 +38,13 @@
 .text-title {
   background: url('../../assets/text_title.png') 50% 75% no-repeat;
   background-size: contain;
+  width: 80%;
+  height: 25%;
+  opacity: 0;
+  animation: 1.5s ease-in 2s forwards fadeIn
+}
+
+.title {
   width: 80%;
   height: 25%;
   opacity: 0;
@@ -61,4 +76,8 @@
   to {
     filter: brightness(100%);
   }
+}
+
+.cls-1 {
+  fill: #fff;
 }
