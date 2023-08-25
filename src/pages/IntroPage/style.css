@@ -1,7 +1,5 @@
 .first-page {
-  background: url('../../assets/background_cropped.png');
   width: calc(100vw - 30px);
-  height: 100%;
   padding: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +11,6 @@
 .border {
   background: center 50% / 150% 90% url('../../assets/border.png') no-repeat;
   width: 100vw;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -22,20 +19,19 @@
 }
 
 .big-logo {
-  background: url('../../assets/bigLogo.png') 50% 50% no-repeat;
+  background: url('../../assets/bigLogo.png') 50% 10% no-repeat;
   background-size: contain;
-  width: 60%;
-  height: 60%;
+  width: 70%;
+  height: 50%;
   opacity: 0;
   animation: 1s ease-out 1s forwards fadeIn
 }
 
 .text-title {
-  background: url('../../assets/text_title.png') 50% 50% no-repeat;
+  background: url('../../assets/text_title.png') 50% 75% no-repeat;
   background-size: contain;
   width: 80%;
   height: 25%;
-  margin-top: -150px;
   opacity: 0;
   animation: 1.5s ease-in 2s forwards fadeIn
 }
@@ -64,12 +60,5 @@
   }
   to {
     filter: brightness(100%);
-  }
-}
-
-
-@supports (-webkit-touch-callout: none) {
-  .first-page {
-    height: -webkit-fill-available;
   }
 }
