@@ -1,7 +1,7 @@
 .first-page {
   background: url('../../assets/background_cropped.png');
   width: calc(100vw - 30px);
-  height: calc(100vh - 30px);
+  height: 100%;
   padding: 15px;
   display: flex;
   flex-wrap: wrap;
