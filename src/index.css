@@ -11,6 +11,9 @@ body {
 }
 
 @supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
   body {
     height: -webkit-fill-available;
   }
