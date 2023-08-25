@@ -1,0 +1,68 @@
+.first-page {
+  background: url('../../assets/background_cropped.png');
+  width: calc(100vw - 30px);
+  height: calc(100vh - 30px);
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: 2s ease fadeInFifty;
+  filter: brightness(100%);
+}
+
+.border {
+  background: center 50% / 150% 90% url('../../assets/border.png') no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: 4.5s ease-out 1s forwards fadeIn
+}
+
+.big-logo {
+  background: url('../../assets/bigLogo.png') 50% 50% no-repeat;
+  background-size: contain;
+  width: 60%;
+  height: 60%;
+  opacity: 0;
+  animation: 1s ease-out 1s forwards fadeIn
+}
+
+.text-title {
+  background: url('../../assets/text_title.png') 50% 50% no-repeat;
+  background-size: contain;
+  width: 80%;
+  height: 25%;
+  margin-top: -150px;
+  opacity: 0;
+  animation: 1.5s ease-in 2s forwards fadeIn
+}
+
+@keyframes slideup {
+  from {
+    margin-top: 100%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0%;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInFifty {
+  from {
+    filter: brightness(50%);
+  }
+  to {
+    filter: brightness(100%);
+  }
+}
