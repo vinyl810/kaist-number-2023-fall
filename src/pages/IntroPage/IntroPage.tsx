@@ -4,6 +4,7 @@ export const IntroPage = () => {
 
   const [pageHeight, setPageHeight] = useState(window.innerHeight - 30)
   const [botFrame, setBotFrame] = useState(window.innerWidth > 500 ? 300 : 250)
+  const [btnVisible, setBtnVisible] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,9 +18,17 @@ export const IntroPage = () => {
 
   return (
     <div className="first-page" style={{height: pageHeight}}>
-      <HorizontalFrame className="top-frame" style={{width: botFrame}} type="bottom" />
+      <HorizontalFrame onClick={() => setBtnVisible(true)} className={`top-frame ${btnVisible && 'fade-out'}`} style={{width: botFrame}} type="bottom" />
       <div className="big-logo"></div>
       <img className="title" src="postitle.svg" alt="title" />
+      <div className="buttons">
+        {btnVisible && <>
+          <button className="btn-pink fade-in">시놉시스</button>
+          <button className="btn-pink fade-in">CAST</button>
+          <button className="btn-pink fade-in">넘버 목록</button>
+          <button className="btn-pink fade-in">후원</button>
+        </>}
+      </div>
     </div>
   );
 }
@@ -27,11 +36,12 @@ export const IntroPage = () => {
 export interface HorizontalFrameProps {
   className?: string,
   style?: React.CSSProperties,
-  type?: 'top' | 'bottom' | 'both'
+  type?: 'top' | 'bottom' | 'both',
+  onClick?: () => void,
 }
 
 export const HorizontalFrame = (props: HorizontalFrameProps) => {
-  const {className, style, type = 'both'} = props
+  const {className, style, type = 'both', onClick} = props
   const BottomFrame = () => {
     return (<>
       <path d="m454.16,947.76c1.11-.02,1.93.15,2.67.5,1.28.6,2.62.7,4,.7,21.91-.01,43.83,0,65.74,0,1.24,0,2.44-.04,3.62-.54.86-.37,1.76-.32,2.45.45.3.34.35.77.09,1.14-.62.89-1.56.85-2.42.61-1.42-.39-2.84-.36-4.28-.36-21.78,0-43.55,0-65.33,0-1.58,0-3.13.05-4.62.71-.87.39-1.83.56-2.81.23-1.07-.35-1.73-1.06-1.61-1.85.16-.97.91-1.31,1.74-1.49.33-.07.68-.07.75-.08Z"/>
@@ -53,7 +63,7 @@ export const HorizontalFrame = (props: HorizontalFrameProps) => {
       : '0 0 676.22 957.3'
 
   return (
-    <svg width="300" className={className} style={style} viewBox={viewBox}>
+    <svg onClick={onClick} width="300" className={className} style={style} viewBox={viewBox}>
       <g>
         {type === 'top' && <TopFrame />}
         {type === 'bottom' && <BottomFrame />}

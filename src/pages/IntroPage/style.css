@@ -58,9 +58,43 @@
 .title {
   width: 80%;
   height: 25%;
-  margin-top: -10vh;
+  margin-top: -5vh;
   opacity: 0;
   animation: 1.5s ease-in 2s forwards fadeIn
+}
+
+.buttons {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  background: transparent;
+  justify-content: center;
+}
+
+.btn-pink {
+  width: 75px;
+  height: 30px;
+  margin: 5px;
+  background: transparent;
+  border: 1px solid pink;
+  color: pink;
+}
+
+.btn-pink:active {
+  background: pink;
+  border: 1px solid white;
+  color: white;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: 1s ease-out forwards fadeIn
+}
+
+.fade-out {
+  opacity: 0;
+  animation: 1s ease-out forwards fadeOut
 }
 
 @keyframes slideup {
@@ -71,6 +105,14 @@
   to {
     margin-top: 0%;
     opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 @keyframes fadeIn {
