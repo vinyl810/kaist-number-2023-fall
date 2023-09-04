@@ -9,95 +9,155 @@
   scroll-snap-type: y mandatory;
 }
 
-.border {
-  background: center 50% / 150% 90% url('../../assets/border.png') no-repeat;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  animation: 4.5s ease-out 1s forwards fadeIn
-}
-
-.vertical-frame {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  fill: white;
-  animation: 4.5s ease-out 1s forwards fadeIn;
-}
-
-.top-frame {
-  width: 50vw;
-  height: 50px;
-  position: absolute;
-  bottom: 10px;
-  opacity: 0;
-  fill: white;
-  animation: 4.5s ease-out 1s forwards fadeIn, 4s ease-in-out infinite 3s bounce
-}
-
 .big-logo {
   background: url('../../assets/bigLogo.png') 50% 10% no-repeat;
   background-size: contain;
   width: 70%;
   height: 50%;
+}
+
+.big-logo.fade-in {
   opacity: 0;
   animation: 1s ease-out 1s forwards fadeIn
 }
 
-.text-title {
-  background: url('../../assets/text_title.png') 50% 75% no-repeat;
-  background-size: contain;
-  width: 80%;
-  height: 25%;
-  opacity: 0;
-  animation: 1.5s ease-in 2s forwards fadeIn
+.big-logo.shrink {
+  animation: 0.5s ease-in forwards logo-shrink
 }
 
 .title {
-  width: 80%;
-  height: 25%;
-  margin-top: 15px;
+  width: 70%;
+  height: 15%;
+}
+
+.title.fade-in {
   opacity: 0;
   animation: 1.5s ease-in 2s forwards fadeIn
 }
 
-.buttons {
-  width: 100vw;
-  height: 20vh;
+.title.shrink {
+  animation: 0.5s ease-in forwards title-shrink
+}
+
+.whenwhere {
+  width: 70%;
+  max-width: 600px;
+  height: 5%;
+  max-height: 10%;
+}
+
+.whenwhere.fade-in {
+  opacity: 0;
+  animation: 1.5s ease-in 2s forwards fadeIn
+}
+
+.whenwhere.shrink {
+  animation: 0.25s ease-in forwards whenwhere-fadeout
+}
+
+
+
+@media (max-width: 400px) {
+  .buttons {
+    width: 100vw;
+    height: 6vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent;
+    justify-content: center;
+  }
+  .btn-pink {
+    width: 75px;
+    height: 30px;
+    margin: 5px;
+    background: transparent;
+    border: 1px solid pink;
+    color: pink;
+  }
+}
+
+@media (min-width: 400px) {
+  .buttons {
+    width: 100vw;
+    height: 6vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent;
+    justify-content: center;
+  }
+  .btn-pink {
+    width: 140px;
+    height: 50px;
+    margin: 5px;
+    background: transparent;
+    border: 1px solid pink;
+    color: pink;
+    font-size: large
+  }
+}
+.btn-active {
+  background: pink;
+  border: 1px solid white;
+  color: white;
+}
+
+.detail {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1%;
+  width: calc(100vw - 30px);
+  height: 0px;
+}
+
+.detail.unshrink {
+  animation: 0.5s ease-in forwards detail-unshrink
+}
+
+.detail-content {
+  opacity: 0;
+  display: block;
+  color: white;
+  padding: 15px;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  animation: 0.5s ease-in 0.5s forwards fadeIn
+}
+
+.detail-title {
+  color: white;
   display: flex;
-  flex-wrap: wrap;
-  background: transparent;
+  width: 100%;
+  height: 50px;
   justify-content: center;
+  font-size: large;
+  align-items: center;
 }
 
-.btn-pink {
-  width: 75px;
-  height: 30px;
-  margin: 5px;
-  background: transparent;
-  border: 1px solid pink;
-  color: pink;
-}
-
-.btn-pink:hover {
-  background: pink;
-  border: 1px solid white;
+.detail-text {
   color: white;
+  display: flex;
+  width: calc(100% - 20px);
+  height: calc(100% - 70px);
+  justify-content: center;
+  font-size: large;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
-
-.btn-pink:active {
-  background: pink;
-  border: 1px solid white;
+.detail-sentence {
   color: white;
+  display: flex;
+  width: calc(100% - 20px);
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  flex-wrap: wrap;
 }
 
 .fade-in {
   opacity: 0;
-  animation: 1s ease-out forwards fadeIn
+  animation: 2s ease-out 3s forwards fadeIn
 }
 
 .fade-out {
@@ -105,16 +165,6 @@
   animation: 1s ease-out forwards fadeOut
 }
 
-@keyframes slideup {
-  from {
-    margin-top: 100%;
-    opacity: 0;
-  }
-  to {
-    margin-top: 0%;
-    opacity: 1;
-  }
-}
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -139,14 +189,39 @@
     filter: brightness(100%);
   }
 }
-@keyframes bounce {
-  0% {
-    bottom: 10px;
+@keyframes logo-shrink {
+  from {
+    height: 50%;
+    opacity: 0;
   }
-  50% {
-    bottom: 30px;
+  to {
+    height: 0%;
+    opacity: 0;
   }
-  100% {
-    bottom: 10px;
+}
+@keyframes title-shrink {
+  from {
+    height: 15%;
+    opacity: 1;
+  }
+  to {
+    height: 8vh;
+    opacity: 1;
+  }
+}
+@keyframes detail-unshrink {
+  from {
+    height: 0;
+  }
+  to {
+    height: 75%;
+  }
+}
+@keyframes whenwhere-fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
