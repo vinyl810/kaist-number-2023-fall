@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'NanumMyungjo';
+  font-weight: 700;
+  src: url("./assets/fonts/NanumMyeongjo.ttf") format("truetype");
+}
