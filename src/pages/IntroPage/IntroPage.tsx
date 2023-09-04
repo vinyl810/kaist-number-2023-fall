@@ -18,7 +18,11 @@ export const IntroPage = () => {
 
   return (
     <div className="first-page" style={{height: pageHeight}}>
-      <HorizontalFrame onClick={() => setBtnVisible(true)} className={`top-frame ${btnVisible && 'fade-out'}`} style={{width: botFrame}} type="bottom" />
+      <HorizontalFrame
+        onClick={() => setBtnVisible(true)}
+        className={`top-frame ${btnVisible && 'fade-out'}`}
+        style={{width: botFrame}} type="bottom"
+      />
       <div className="big-logo"></div>
       <img className="title" src="postitle.svg" alt="title" />
       <div className="buttons">

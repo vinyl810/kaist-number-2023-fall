@@ -6,6 +6,7 @@
   justify-content: center;
   animation: 2s ease fadeInFifty;
   filter: brightness(100%);
+  scroll-snap-type: y mandatory;
 }
 
 .border {
@@ -58,14 +59,14 @@
 .title {
   width: 80%;
   height: 25%;
-  margin-top: -5vh;
+  margin-top: 15px;
   opacity: 0;
   animation: 1.5s ease-in 2s forwards fadeIn
 }
 
 .buttons {
   width: 100vw;
-  height: 100px;
+  height: 20vh;
   display: flex;
   flex-wrap: wrap;
   background: transparent;
@@ -80,6 +81,13 @@
   border: 1px solid pink;
   color: pink;
 }
+
+.btn-pink:hover {
+  background: pink;
+  border: 1px solid white;
+  color: white;
+}
+
 
 .btn-pink:active {
   background: pink;
