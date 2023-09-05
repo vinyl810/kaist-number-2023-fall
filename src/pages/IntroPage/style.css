@@ -56,7 +56,7 @@
 
 
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .buttons {
     width: 100vw;
     height: 6vh;
@@ -75,7 +75,7 @@
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 500px) {
   .buttons {
     width: 100vw;
     height: 6vh;
