@@ -133,7 +133,7 @@
 
 .md-descr {
   width: 100%;
-  height: 90%;
+  height: auto;
   margin-bottom: 10px;
   font-size: medium;
   text-align: center;
@@ -145,6 +145,7 @@
   height: auto;
   margin-bottom: 10px;
   font-size: large;
+  font-weight: bold;
 }
 
 .detail-divider {
@@ -403,9 +404,10 @@
     height: auto;
     margin-bottom: 10px;
     font-size: 35px;
+    font-weight: bold;
   }
   .md-image.double {
-    width: 170px;
+    width: 100px;
     object-fit: contain;
     cursor: pointer;
   }
@@ -440,6 +442,12 @@
     height: auto;
     margin-bottom: 10px;
     font-size: 35px;
+    font-weight: bold;
+  }
+  .md-image.double {
+    width: 130px;
+    object-fit: contain;
+    cursor: pointer;
   }
 }
 
