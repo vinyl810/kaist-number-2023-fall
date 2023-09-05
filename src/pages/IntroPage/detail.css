@@ -48,6 +48,7 @@
   font-weight: bold;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-family: NanumMyungjo;
 }
 
 .detail-image {
@@ -151,7 +152,6 @@
     align-items: center;
     font-size: x-large;
     flex-wrap: wrap;
-    font-family: NanumMyungjo;
   }
   
   .detail-sentence.special {
@@ -159,6 +159,7 @@
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-family: NanumMyungjo;
   }
 
   .detail-image {
