@@ -1,9 +1,7 @@
 @charset "utf-8";
 @font-face {
     font-family: 'NanumSquare';
-    // src: url('./assets/fonts/NanumSquareL.eot');
     src: url('./assets/fonts/NanumSquareL.woff2') format('woff2');
-         // url('./assets/fonts/NanumSquareL.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
