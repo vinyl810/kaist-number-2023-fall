@@ -10,14 +10,17 @@
 }
 
 .detail-title {
+  background: url('../../assets/title_frame.png') 50% 50% no-repeat;
+  background-size: contain;
   color: white;
   display: flex;
   width: 100%;
   height: 50px;
   justify-content: center;
-  font-size: xx-large;
+  font-size: large;
   align-items: center;
-  font-family: Tangerine;
+  font-family: NanumSquare;
+  font-weight: bold;
 }
 
 .detail-text {
@@ -47,6 +50,7 @@
 .detail-sentence.special {
   font-size: x-large;
   font-weight: bold;
+  height: 30px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: NanumGrandfather;
@@ -100,11 +104,11 @@
 .number-item {
   width: 100%;
   max-width: 560px;
-  height: 70px;
+  height: 80px;
   display: grid;
   grid-template-areas: "a b b" "a c c";
   grid-template-columns: 50px 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1.5fr;
   border-bottom: 1px rgba(255, 255, 255, 0.7) solid;
 }
 .number-head {
@@ -133,6 +137,30 @@
   align-items: center;
 }
 
+.detail-casts {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  overflow: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.detail-image {
+  width: 90%;
+  height: 90%;
+  padding: 5%;
+  object-fit: contain;
+  cursor: pointer;
+}
+.detail-image.big {
+  width: 90%;
+  height: 90%;
+  padding: 5%;
+  object-fit: contain;
+  grid-column: span 2;
+  cursor: pointer;
+}
+
 @media (min-width: 400px) {
   .detail-content {
     opacity: 0;
@@ -148,11 +176,11 @@
     color: white;
     display: flex;
     width: 100%;
-    height: 90px;
+    height: 125px;
     justify-content: center;
-    font-size: 75px;
+    font-size: 50px;
     align-items: center;
-    font-family: Tangerine;
+    font-family: NanumSquare;
     margin-bottom: 15px;
   }
   
@@ -246,7 +274,7 @@
   }
 }
 
-@media (max-width: 1600px) {
+@media (min-width: 900px) {
   .detail-casts {
     width: 100%;
     height: 100%;
@@ -256,16 +284,16 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
   .detail-image {
-    width: 85%;
-    height: 85%;
+    width: 75%;
+    height: 75%;
     padding: 5%;
     object-fit: contain;
     grid-column: span 2;
     cursor: pointer;
   }
   .detail-image.big {
-    width: 85%;
-    height: 85%;
+    width: 75%;
+    height: 75%;
     padding: 5%;
     object-fit: contain;
     grid-column: span 3;

@@ -14,13 +14,13 @@ export const DetailContent = (props: DetailContentProp) => {
   const getTitle = (showDetail: string | null | 'init') => {
     switch (showDetail) {
       case 'synopsis': 
-        return 'SYNOPSIS';
+        return '시놉시스';
       case 'cast':
         return 'CAST';
       case 'numbers':
         return 'NUMBERS';
       case 'patron':
-        return 'PATRON';
+        return 'MD 및 후원';
       default:
         return '';
     }
