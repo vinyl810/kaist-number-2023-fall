@@ -55,8 +55,6 @@
 }
 
 
-
-@media (max-width: 500px) {
   .buttons {
     width: 100vw;
     height: 6vh;
@@ -73,7 +71,6 @@
     border: 1px solid pink;
     color: pink;
   }
-}
 
 @media (min-width: 500px) {
   .buttons {
