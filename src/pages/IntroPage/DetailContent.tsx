@@ -14,13 +14,13 @@ export const DetailContent = (props: DetailContentProp) => {
   const getTitle = (showDetail: string | null | 'init') => {
     switch (showDetail) {
       case 'synopsis': 
-        return '시놉시스';
+        return 'SYNOPSIS';
       case 'cast':
         return 'CAST';
       case 'numbers':
-        return '넘버 목록';
+        return 'NUMBERS';
       case 'patron':
-        return '후원';
+        return 'PATRON';
       default:
         return '';
     }
@@ -29,15 +29,19 @@ export const DetailContent = (props: DetailContentProp) => {
   const getContent = (showDetail: string | null | 'init') => {
     switch (showDetail) {
       case 'cast':
-        return contentData.cast.map(x => {
-          return (
-            <ImageItem 
-              onClick={() => setShowPopup(x.url)}
-              url={`profiles/${x.url}.png`} 
-              style={x.style}
-            />
-          )
-        })
+        return (
+          <div className="detail-casts">
+            {contentData.cast.map(x => {
+              return (
+                <ImageItem 
+                  onClick={() => setShowPopup(x.url)}
+                  url={`profiles/${x.url}.png`} 
+                  style={x.style}
+                />
+              )
+            })}
+          </div>
+        )
       case 'numbers':
         return contentData.numbers.map(x => {
           return (<div className="number-item">

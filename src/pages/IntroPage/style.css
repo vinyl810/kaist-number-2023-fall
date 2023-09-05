@@ -6,7 +6,6 @@
   justify-content: center;
   animation: 2s ease fadeInFifty;
   filter: brightness(100%);
-  scroll-snap-type: y mandatory;
 }
 
 .big-logo {
@@ -92,7 +91,7 @@
     background: transparent;
     border: 1px solid pink;
     color: pink;
-    font-size: large
+    font-size: x-large
   }
 }
 .btn-active {
@@ -106,6 +105,7 @@
   border-radius: 1%;
   width: calc(100vw - 30px);
   height: 0px;
+  margin-top: 15px;
 }
 
 .detail.unshrink {
@@ -171,7 +171,7 @@
     height: 0;
   }
   to {
-    height: 75%;
+    height: calc(80%);
   }
 }
 @keyframes whenwhere-fadeout {
