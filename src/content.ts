@@ -83,5 +83,26 @@ export const contentData = {
     {head: '#18.', title:  '떠오르는 이 마음', info: '작곡 박하연 / 편곡 박하연 / 작사 박하연 '},
     {head: '#19.', title:  '영원에 새겨진 발걸음', info: '편곡 박하연 / 작사 유지현, 박해준'},
   ],
-  patron: ""
+  patron: {
+    mds: [
+      {images: ['1', '2'], text: '오리지널 스티커 (A6, 2종)', style: 'double'},
+      {images: ['3'], text: '(한정) 오리지널 포스터', style: 'normal'},
+      {images: ['5'], text: '아크릴 키링', style: 'normal'},
+      {images: ['4'], text: '오리지널 티켓', style: 'normal'}
+    ],
+    descriptions: [
+      {
+        text: 'MD는 당일 공연장 입구에서 공연 전후에 구매 가능합니다.',
+        style: 'normal'
+      },
+      {
+        text: '후원: 12345-13324-233 지현은행',
+        style: 'special'
+      },
+      {
+        text: '후원을 통해 NUMBER의 활동을 응원해주세요. 10,000 원 이상 기부해주신 분들께는 감사의 의미로 MD를 소정 증정합니다. 당일 안내 데스크에서 입금명을 알려주시면 안내 도와드리겠습니다.',
+        style: 'normal'
+      }
+    ]
+  }
 }

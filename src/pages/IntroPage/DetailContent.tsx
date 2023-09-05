@@ -10,6 +10,7 @@ export const DetailContent = (props: DetailContentProp) => {
   const {showDetail} = props
 
   const [showPopup, setShowPopup] = React.useState<string | null>(null)
+  const [showMdPopup, setShowMdPopup] = React.useState<string | null>(null)
 
   const getTitle = (showDetail: string | null | 'init') => {
     switch (showDetail) {
@@ -53,6 +54,17 @@ export const DetailContent = (props: DetailContentProp) => {
       case 'synopsis':
         return contentData.synopsis.map(x => <div className={`detail-sentence ${x.style}`}>{x.text}</div>)
       case 'patron':
+        return (
+          <div className='detail-mds'>
+            {contentData.patron.mds.map(x => <MdItem images={x.images} text={x.text} style={x.style} onClick={setShowMdPopup} />)}
+            <div className='detail-divider' />
+            {contentData.patron.descriptions.map(x => {
+              return (
+                <div className={`md-descr ${x.style}`}>{x.text}</div>
+              )
+            })}
+          </div>
+          )
       default:
         return '아직 후원 정보가 준비되지 않았습니다. 조금만 기다려주세요!'
     }
@@ -61,6 +73,7 @@ export const DetailContent = (props: DetailContentProp) => {
   return (
     <div className="detail-content">
       {showPopup && <ImagePopup url={showPopup} onClick={() => {setShowPopup(null)}} />}
+      {showMdPopup && <MdImagePopup url={showMdPopup} onClick={() => {setShowMdPopup(null)}} />}
       <div className="detail-title">
         {getTitle(showDetail)}
       </div>
@@ -79,6 +92,27 @@ const ImagePopup = (props: {url: string, onClick: () => void}) => {
   return (
     <div className="popup-wrapper">
       <img onClick={props.onClick} src={`profiles/${props.url}.png`} alt={`profile${props.url}`} className="image-popup normal" />
+    </div>
+  )
+}
+
+const MdImagePopup = (props: {url: string, onClick: () => void}) => {
+  return (
+    <div className="popup-wrapper">
+      <img onClick={props.onClick} src={`mds/${props.url}.png`} alt={`profile${props.url}`} className="image-popup normal" />
+    </div>
+  )
+}
+
+const MdItem = (props: {images: Array<string>, text: string, style: string, onClick: (arg: string) => void}) => {
+  return (
+    <div className="md-item">
+      <div className="md-wrapper">
+        {props.images.map(x => {
+          return <img onClick={() => props.onClick(x)} className={`md-image ${props.style}`} src={`mds/${x}.png`} alt={`mds${x}`}/>
+        })}
+      </div>
+        <div className="md-text">{props.text}</div>
     </div>
   )
 }
