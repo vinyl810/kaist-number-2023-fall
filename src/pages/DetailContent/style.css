@@ -328,6 +328,38 @@
   }
 }
 
+@media (width <= 290px) {
+  .detail-content {
+    padding: 15px 0;
+    width: calc(100%);
+  }
+
+  .detail-text {
+    padding: 0;
+    width: calc(100%);
+  }
+
+  .detail-sentence {
+    color: white;
+    display: flex;
+    width: calc(100% - 20px);
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1px;
+    flex-wrap: wrap;
+  }
+  
+  .detail-sentence.special {
+    font-size: 15px;
+    font-weight: bold;
+    height: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: NanumGrandfather, sans-serif;
+  }
+}
+
 @media (width >= 660px) and (width <= 920px) {
   .detail-sentence {
     color: white;

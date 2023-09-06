@@ -188,3 +188,19 @@
     height: 0;
   }
 }
+
+@media (width <= 290px) {
+  .buttons {
+    height: 12vh;
+  }
+
+  @keyframes detail-unshrink {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: calc(75%);
+    }
+  }
+}
