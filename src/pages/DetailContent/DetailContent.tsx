@@ -143,7 +143,7 @@ const MdItem = (props: MdItemProps): React.ReactElement => {
             <img
               onClick={() => { onClick(x) }}
               className={`md-image ${style}`}
-              src={`mds/${x}.png`}
+              src={`mdsLow/${x}.png`}
               alt={`mds${x}`}
               key={x}
             />)
