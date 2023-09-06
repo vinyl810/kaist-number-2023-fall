@@ -213,7 +213,7 @@
   cursor: pointer;
 }
 
-@media (width >= 500px) {
+@media (width >= 660px) {
   .detail-content {
     opacity: 0;
     display: block;
@@ -240,7 +240,7 @@
     color: white;
     display: flex;
     width: calc(100% - 20px);
-    height: calc(85%);
+    height: calc(80vh - 250px);
     justify-content: center;
     font-size: large;
     align-items: center;

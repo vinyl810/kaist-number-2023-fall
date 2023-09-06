@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { DetailContent } from './DetailContent'
 import * as React from 'react'
 import { styled } from 'styled-components'
+import './style.css'
 
 export const IntroPage = (): React.ReactElement => {
   const [pageHeight, setPageHeight] = useState(window.innerHeight - 30)
@@ -53,6 +54,7 @@ export const IntroPage = (): React.ReactElement => {
     <IntroPageWrapper style={{ height: pageHeight }}>
       <div className={`big-logo ${fadeOrShrink()}`}/>
       <img
+        onClick={() => { showDetail !== 'init' && setShowDetail(null) }}
         className={`title ${fadeOrShrink()}`}
         src="postitle.svg"
         alt="title"

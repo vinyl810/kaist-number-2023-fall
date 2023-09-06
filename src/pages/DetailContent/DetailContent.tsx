@@ -1,4 +1,4 @@
-import './detail.css'
+import './style.css'
 import { contentData } from '../../content'
 import * as React from 'react'
 

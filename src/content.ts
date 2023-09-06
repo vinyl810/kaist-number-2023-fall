@@ -96,7 +96,7 @@ export const contentData = {
         style: 'normal'
       },
       {
-        text: '후원: 12345-13324-233 지현은행',
+        text: '후원: 79795832879 카카오뱅크 (유원영)',
         style: 'special'
       },
       {

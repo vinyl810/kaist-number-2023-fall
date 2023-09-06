@@ -1,5 +1,5 @@
 .big-logo {
-  background: url('../../assets/bigLogo.png') 50% 10% no-repeat;
+  background: url('../assets/bigLogo.png') 50% 10% no-repeat;
   background-size: contain;
   width: 70%;
   height: 50%;
@@ -45,25 +45,36 @@
 }
 
 
-  .buttons {
-    width: 100vw;
-    height: 6vh;
-    display: flex;
-    flex-wrap: wrap;
-    background: transparent;
-    justify-content: center;
-  }
+.buttons {
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  flex-wrap: wrap;
+  background: transparent;
+  justify-content: center;
+}
 
-  .btn-pink {
-    width: 75px;
-    height: 30px;
-    margin: 5px;
-    background: transparent;
-    border: 1px solid pink;
-    color: pink;
-  }
+.btn-pink {
+  width: 75px;
+  height: 30px;
+  margin: 5px;
+  background: transparent;
+  border: 1px solid pink;
+  color: pink;
+}
 
-@media (width >= 500px) {
+.btn-pink.fade-in {
+  opacity: 0;
+  animation: 2s ease-out 3s forwards fade-in
+}
+
+.btn-active {
+  background: pink;
+  border: 1px solid white;
+  color: white;
+}
+
+@media (width >= 660px) {
   .buttons {
     width: 100vw;
     height: 6vh;
@@ -82,12 +93,12 @@
     color: pink;
     font-size: x-large
   }
-}
 
-.btn-active {
-  background: pink;
-  border: 1px solid white;
-  color: white;
+  .btn-active {
+    background: pink;
+    border: 1px solid white;
+    color: white;
+  }
 }
 
 .detail {
@@ -100,16 +111,6 @@
 
 .detail.unshrink {
   animation: 0.5s ease-in forwards detail-unshrink
-}
-
-.fade-in {
-  opacity: 0;
-  animation: 2s ease-out 3s forwards fade-in
-}
-
-.fade-out {
-  opacity: 0;
-  animation: 1s ease-out forwards fade-out
 }
 
 @keyframes fade-out {
@@ -145,7 +146,7 @@
 @keyframes logo-shrink {
   from {
     height: 50%;
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
@@ -179,9 +180,11 @@
 @keyframes whenwhere-fade-out {
   from {
     opacity: 1;
+    height: 0;
   }
 
   to {
     opacity: 0;
+    height: 0;
   }
 }
