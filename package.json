@@ -48,6 +48,12 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.33.2"
-  }
+    "eslint-plugin-react": "^7.33.2",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0"
+  },
+  "main": "index.tsx",
+  "repository": "https://github.com/vinyl810/kaist-number-2023-fall.git",
+  "author": "vinyl810 <19thsummer@kaist.ac.kr>",
+  "license": "MIT"
 }

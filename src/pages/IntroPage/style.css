@@ -1,13 +1,3 @@
-.first-page {
-  width: calc(100vw - 30px);
-  padding: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  animation: 2s ease fadeInFifty;
-  filter: brightness(100%);
-}
-
 .big-logo {
   background: url('../../assets/bigLogo.png') 50% 10% no-repeat;
   background-size: contain;
@@ -17,7 +7,7 @@
 
 .big-logo.fade-in {
   opacity: 0;
-  animation: 1s ease-out 1s forwards fadeIn
+  animation: 1s ease-out 1s forwards fade-in
 }
 
 .big-logo.shrink {
@@ -31,7 +21,7 @@
 
 .title.fade-in {
   opacity: 0;
-  animation: 1.5s ease-in 2s forwards fadeIn
+  animation: 1.5s ease-in 2s forwards fade-in
 }
 
 .title.shrink {
@@ -47,11 +37,11 @@
 
 .whenwhere.fade-in {
   opacity: 0;
-  animation: 1.5s ease-in 2s forwards fadeIn
+  animation: 1.5s ease-in 2s forwards fade-in
 }
 
 .whenwhere.shrink {
-  animation: 0.25s ease-in forwards whenwhere-fadeout
+  animation: 0.25s ease-in forwards whenwhere-fade-out
 }
 
 
@@ -63,6 +53,7 @@
     background: transparent;
     justify-content: center;
   }
+
   .btn-pink {
     width: 75px;
     height: 30px;
@@ -72,7 +63,7 @@
     color: pink;
   }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .buttons {
     width: 100vw;
     height: 6vh;
@@ -81,6 +72,7 @@
     background: transparent;
     justify-content: center;
   }
+
   .btn-pink {
     width: 140px;
     height: 50px;
@@ -91,6 +83,7 @@
     font-size: x-large
   }
 }
+
 .btn-active {
   background: pink;
   border: 1px solid white;
@@ -98,10 +91,10 @@
 }
 
 .detail {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(0 0 0 / 40%);
   border-radius: 1%;
   width: calc(100vw - 30px);
-  height: 0px;
+  height: 0;
   margin-top: 15px;
 }
 
@@ -111,70 +104,83 @@
 
 .fade-in {
   opacity: 0;
-  animation: 2s ease-out 3s forwards fadeIn
+  animation: 2s ease-out 3s forwards fade-in
 }
 
 .fade-out {
   opacity: 0;
-  animation: 1s ease-out forwards fadeOut
+  animation: 1s ease-out forwards fade-out
 }
 
-@keyframes fadeOut {
+@keyframes fade-out {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
 }
-@keyframes fadeIn {
+
+@keyframes fade-in {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
-@keyframes fadeInFifty {
+
+@keyframes fade-in-fifty {
   from {
     filter: brightness(50%);
   }
+
   to {
     filter: brightness(100%);
   }
 }
+
 @keyframes logo-shrink {
   from {
     height: 50%;
     opacity: 0;
   }
+
   to {
     height: 0%;
     opacity: 0;
   }
 }
+
 @keyframes title-shrink {
   from {
     height: 15%;
     opacity: 1;
   }
+
   to {
     height: 8vh;
     opacity: 1;
   }
 }
+
 @keyframes detail-unshrink {
   from {
     height: 0;
   }
+
   to {
     height: calc(80%);
   }
 }
-@keyframes whenwhere-fadeout {
+
+@keyframes whenwhere-fade-out {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }

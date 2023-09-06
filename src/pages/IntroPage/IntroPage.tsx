@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { DetailContent } from './DetailContent'
 import * as React from 'react'
+import { styled } from 'styled-components'
 
 export const IntroPage = (): React.ReactElement => {
   const [pageHeight, setPageHeight] = useState(window.innerHeight - 30)
@@ -16,6 +17,10 @@ export const IntroPage = (): React.ReactElement => {
   const handleClick = (detail: string | null = null): void => {
     if (showDetail === detail) setShowDetail(null)
     else setShowDetail(detail)
+  }
+
+  const fadeOrShrink = (): string => {
+    return `${showDetail === 'init' && 'fade-in'} ${showDetail !== null && showDetail !== 'init' && 'shrink'}`
   }
 
   const Buttons = (): React.ReactElement => {
@@ -45,20 +50,10 @@ export const IntroPage = (): React.ReactElement => {
   }
 
   return (
-    <div className="first-page" style={{ height: pageHeight }}>
-      <div
-        className={`
-          big-logo
-          ${showDetail === 'init' && 'fade-in'}
-          ${showDetail !== null && showDetail !== 'init' && 'shrink'}
-        `}
-      />
+    <IntroPageWrapper style={{ height: pageHeight }}>
+      <div className={`big-logo ${fadeOrShrink()}`}/>
       <img
-        className={`
-          title 
-          ${showDetail === 'init' && 'fade-in'} 
-          ${showDetail !== null && showDetail !== 'init' && 'shrink'}
-        `}
+        className={`title ${fadeOrShrink()}`}
         src="postitle.svg"
         alt="title"
       />
@@ -69,14 +64,20 @@ export const IntroPage = (): React.ReactElement => {
         </div>
       }
       <img
-        className={`
-          whenwhere 
-          ${showDetail === 'init' && 'fade-in'} 
-          ${showDetail !== null && showDetail !== 'init' && 'shrink'}
-        `}
+        className={`whenwhere  ${fadeOrShrink()}`}
         src="poswhenwhere.svg"
         alt="title"
       />
-    </div>
+    </IntroPageWrapper>
   )
 }
+
+const IntroPageWrapper = styled.div`
+  width: calc(100vw - 30px);
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: 2s ease fade-in-fifty;
+  filter: brightness(100%);
+`
