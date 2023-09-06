@@ -1,90 +1,82 @@
-import { useEffect, useState } from "react";
-import { DetailContent } from "./DetailContent";
+import { useEffect, useState } from 'react'
+import { DetailContent } from './DetailContent'
+import * as React from 'react'
 
-export const IntroPage = () => {
-
+export const IntroPage = (): React.ReactElement => {
   const [pageHeight, setPageHeight] = useState(window.innerHeight - 30)
   const [showDetail, setShowDetail] = useState<string | null | 'init'>('init')
 
   useEffect(() => {
-    const handleResize = () => {
-      setPageHeight(window.innerHeight - 30)
-    }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    const handleResize = (): void => { setPageHeight(window.innerHeight - 30) }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => { window.removeEventListener('resize', handleResize) }
   }, [])
 
-  const handleClick = (detail: string | null = null) => {
+  const handleClick = (detail: string | null = null): void => {
     if (showDetail === detail) setShowDetail(null)
     else setShowDetail(detail)
   }
 
+  const Buttons = (): React.ReactElement => {
+    const buttons = [
+      { id: 'synopsis', text: '시놉시스' },
+      { id: 'cast', text: 'CAST' },
+      { id: 'numbers', text: '넘버 목록' },
+      { id: 'patron', text: '후원' }
+    ]
+
+    return (
+      <div className="buttons">{
+        (buttons.map(x => {
+          return (
+            <button
+              onClick={() => { handleClick(x.id) }}
+              className={`
+                btn-pink 
+                ${showDetail === 'init' && 'fade-in'} 
+                ${showDetail === x.id && 'btn-active'}
+              `}
+              key={x.id}
+            >{x.text}</button>
+          )
+        }))
+    }</div>)
+  }
+
   return (
-    <div className="first-page" style={{height: pageHeight}}>
-      <div className={`
+    <div className="first-page" style={{ height: pageHeight }}>
+      <div
+        className={`
           big-logo
           ${showDetail === 'init' && 'fade-in'}
-          ${showDetail && showDetail !== 'init' && 'shrink'}
+          ${showDetail !== null && showDetail !== 'init' && 'shrink'}
         `}
       />
       <img
         className={`
           title 
           ${showDetail === 'init' && 'fade-in'} 
-          ${showDetail && showDetail !== 'init' && 'shrink'}
+          ${showDetail !== null && showDetail !== 'init' && 'shrink'}
         `}
         src="postitle.svg"
         alt="title"
       />
-      <div className="buttons">
-        <button 
-          onClick={() => handleClick('synopsis')} 
-          className={`
-            btn-pink 
-            fade-in 
-            ${showDetail === 'synopsis' && 'btn-active'}
-          `}
-        >시놉시스</button>
-        <button 
-          onClick={() => handleClick('cast')} 
-          className={`
-            btn-pink 
-            fade-in 
-            ${showDetail === 'cast' && 'btn-active'}
-          `}
-        >CAST</button>
-        <button 
-          onClick={() => handleClick('numbers')} 
-          className={`
-            btn-pink 
-            fade-in 
-            ${showDetail === 'numbers' && 'btn-active'}
-          `}
-        >넘버 목록</button>
-        <button 
-          onClick={() => handleClick('patron')} 
-          className={`
-            btn-pink 
-            fade-in 
-            ${showDetail === 'patron' && 'btn-active'}
-          `}
-        >후원</button>
-      </div>
-      {showDetail !== null && showDetail !== 'init' && <>
-        <div className={`detail ${showDetail && showDetail !== 'init' && 'unshrink'}`}>
+      <Buttons />
+      {showDetail !== null && showDetail !== 'init' &&
+        <div className={`detail ${showDetail !== null && showDetail !== 'init' && 'unshrink'}`}>
           <DetailContent showDetail={showDetail} />
-        </div>    
-      </>}
+        </div>
+      }
       <img
         className={`
           whenwhere 
           ${showDetail === 'init' && 'fade-in'} 
-          ${showDetail && showDetail !== 'init' && 'shrink'}
+          ${showDetail !== null && showDetail !== 'init' && 'shrink'}
         `}
         src="poswhenwhere.svg"
         alt="title"
       />
     </div>
-  );
+  )
 }

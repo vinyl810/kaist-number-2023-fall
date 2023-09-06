@@ -1,3 +1,16 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'NanumSquare';
+    src: url('./assets/fonts/NanumSquareL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'NanumGrandfather';
+  font-weight: 700;
+  src: url("./assets/fonts/NanumGrandfather.woff2") format("woff2");
+}
+
 * {
   margin: 0;
   padding: 0;
